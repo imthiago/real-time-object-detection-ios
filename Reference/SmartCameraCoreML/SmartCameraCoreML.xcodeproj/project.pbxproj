@@ -13,7 +13,7 @@
 		AFE0EF6E26F16A0E0037F50E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFE0EF6C26F16A0E0037F50E /* Main.storyboard */; };
 		AFE0EF7026F16A0E0037F50E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFE0EF6F26F16A0E0037F50E /* Assets.xcassets */; };
 		AFE0EF7326F16A0E0037F50E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFE0EF7126F16A0E0037F50E /* LaunchScreen.storyboard */; };
-		AFE0EF7B26F176EA0037F50E /* SqueezeNet.mlkitmodel in Sources */ = {isa = PBXBuildFile; fileRef = AFE0EF7A26F176EA0037F50E /* SqueezeNet.mlkitmodel */; };
+		AFE0EF7D26F17B780037F50E /* Resnet50.mlkitmodel in Sources */ = {isa = PBXBuildFile; fileRef = AFE0EF7C26F17B780037F50E /* Resnet50.mlkitmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +25,7 @@
 		AFE0EF6F26F16A0E0037F50E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AFE0EF7226F16A0E0037F50E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AFE0EF7426F16A0E0037F50E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AFE0EF7A26F176EA0037F50E /* SqueezeNet.mlkitmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SqueezeNet.mlkitmodel; sourceTree = "<group>"; };
+		AFE0EF7C26F17B780037F50E /* Resnet50.mlkitmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlkitmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +58,7 @@
 		AFE0EF6526F16A0E0037F50E /* SmartCameraCoreML */ = {
 			isa = PBXGroup;
 			children = (
-				AFE0EF7A26F176EA0037F50E /* SqueezeNet.mlkitmodel */,
+				AFE0EF7C26F17B780037F50E /* Resnet50.mlkitmodel */,
 				AFE0EF6626F16A0E0037F50E /* AppDelegate.swift */,
 				AFE0EF6826F16A0E0037F50E /* SceneDelegate.swift */,
 				AFE0EF6A26F16A0E0037F50E /* ViewController.swift */,
@@ -141,8 +141,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFE0EF6B26F16A0E0037F50E /* ViewController.swift in Sources */,
+				AFE0EF7D26F17B780037F50E /* Resnet50.mlkitmodel in Sources */,
 				AFE0EF6726F16A0E0037F50E /* AppDelegate.swift in Sources */,
-				AFE0EF7B26F176EA0037F50E /* SqueezeNet.mlkitmodel in Sources */,
 				AFE0EF6926F16A0E0037F50E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

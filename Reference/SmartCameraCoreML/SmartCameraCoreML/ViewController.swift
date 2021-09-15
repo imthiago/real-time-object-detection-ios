@@ -39,6 +39,16 @@ class ViewController: UIViewController {
 extension ViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         guard let pixelBuffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
-        
+
+        guard let model = try? VNCoreMLModel(for: Resnet50(configuration: MLModelConfiguration()).model) else { return }
+
+        let request = VNCoreMLRequest(model: model) { finishedRequest, error in
+            guard let results = finishedRequest.results as? [VNClassificationObservation] else { return }
+
+            guard let firstObservation = results.first else { return }
+
+            print(firstObservation.identifier, firstObservation.confidence)
+        }
+        try? VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:]).perform([request])
     }
 }
