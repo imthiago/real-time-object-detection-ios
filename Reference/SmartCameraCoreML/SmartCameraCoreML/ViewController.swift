@@ -41,11 +41,6 @@ class ViewController: UIViewController {
         dataOutut.setSampleBufferDelegate(self, queue: DispatchQueue(label: "videoQueue"))
         captureSession.addOutput(dataOutut)
     }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        firstResultLabel.text = "Waiting for object :)"
-    }
 }
 
 extension ViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
