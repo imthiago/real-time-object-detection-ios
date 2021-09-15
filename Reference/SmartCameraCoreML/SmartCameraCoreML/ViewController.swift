@@ -13,8 +13,10 @@ class ViewController: UIViewController {
 
     // MARK: - Outlets
     @IBOutlet private weak var mainView: UIView!
-    @IBOutlet private weak var resultLabel: UILabel!
-    
+    @IBOutlet private weak var firstResultLabel: UILabel!
+    @IBOutlet private weak var secondResultLabel: UILabel!
+    @IBOutlet private weak var thirdResultLabel: UILabel!
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +41,11 @@ class ViewController: UIViewController {
         dataOutut.setSampleBufferDelegate(self, queue: DispatchQueue(label: "videoQueue"))
         captureSession.addOutput(dataOutut)
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        firstResultLabel.text = "Waiting for object :)"
+    }
 }
 
 extension ViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
@@ -50,9 +57,13 @@ extension ViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
         let request = VNCoreMLRequest(model: model) { finishedRequest, error in
             guard let results = finishedRequest.results as? [VNClassificationObservation] else { return }
 
-            guard let firstObservation = results.first else { return }
+            let firstResults = results.prefix(3)
 
-            print(firstObservation.identifier, firstObservation.confidence)
+            DispatchQueue.main.async {
+                self.firstResultLabel.text = "\(firstResults[0].identifier): \(round(firstResults[0].confidence * 100))%"
+                self.secondResultLabel.text = "\(firstResults[1].identifier): \(round(firstResults[1].confidence * 100))%"
+                self.thirdResultLabel.text = "\(firstResults[2].identifier): \(round(firstResults[2].confidence * 100))%"
+            }
         }
         try? VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:]).perform([request])
     }

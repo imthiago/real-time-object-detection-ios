@@ -20,28 +20,47 @@
                                 <rect key="frame" x="20" y="44" width="374" height="618"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RCN-Iu-XOW">
-                                <rect key="frame" x="20" y="682" width="374" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="PIy-Eu-I9v">
+                                <rect key="frame" x="20" y="662" width="374" height="20"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RCN-Iu-XOW">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8PG-i6-1zx">
+                                        <rect key="frame" x="0.0" y="10" width="374" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QzD-lb-lSa">
+                                        <rect key="frame" x="0.0" y="20" width="374" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="A3u-S3-pnA" secondAttribute="bottom" constant="200" id="22h-GV-Pd2"/>
-                            <constraint firstItem="RCN-Iu-XOW" firstAttribute="width" secondItem="A3u-S3-pnA" secondAttribute="width" id="Akx-2U-dMe"/>
                             <constraint firstItem="A3u-S3-pnA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="C1I-v0-pi5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="A3u-S3-pnA" secondAttribute="trailing" constant="20" id="G30-r1-gyU"/>
                             <constraint firstItem="A3u-S3-pnA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Mbf-g9-jJn"/>
-                            <constraint firstItem="RCN-Iu-XOW" firstAttribute="centerX" secondItem="A3u-S3-pnA" secondAttribute="centerX" id="Z4E-cg-Km4"/>
-                            <constraint firstItem="RCN-Iu-XOW" firstAttribute="top" secondItem="A3u-S3-pnA" secondAttribute="bottom" constant="20" id="bLK-P8-8Wc"/>
+                            <constraint firstItem="PIy-Eu-I9v" firstAttribute="width" secondItem="A3u-S3-pnA" secondAttribute="width" id="SDP-jV-zo0"/>
+                            <constraint firstItem="PIy-Eu-I9v" firstAttribute="top" secondItem="A3u-S3-pnA" secondAttribute="bottom" id="SpA-fv-NLw"/>
+                            <constraint firstItem="PIy-Eu-I9v" firstAttribute="centerX" secondItem="A3u-S3-pnA" secondAttribute="centerX" id="Ura-6A-bO3"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="firstResultLabel" destination="RCN-Iu-XOW" id="Lr4-ht-pUC"/>
                         <outlet property="mainView" destination="A3u-S3-pnA" id="bcD-IG-dhx"/>
-                        <outlet property="resultLabel" destination="RCN-Iu-XOW" id="Lr4-ht-pUC"/>
+                        <outlet property="secondResultLabel" destination="8PG-i6-1zx" id="SMO-NT-y3S"/>
+                        <outlet property="thirdResultLabel" destination="QzD-lb-lSa" id="7CN-91-9bU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
