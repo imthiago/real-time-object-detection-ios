@@ -11,6 +11,11 @@ import Vision
 
 class ViewController: UIViewController {
 
+    // MARK: - Outlets
+    @IBOutlet private weak var mainView: UIView!
+    @IBOutlet private weak var resultLabel: UILabel!
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,7 +33,7 @@ class ViewController: UIViewController {
         let previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
 
         view.layer.addSublayer(previewLayer)
-        previewLayer.frame = view.frame
+        previewLayer.frame = mainView.frame
 
         let dataOutut = AVCaptureVideoDataOutput()
         dataOutut.setSampleBufferDelegate(self, queue: DispatchQueue(label: "videoQueue"))
