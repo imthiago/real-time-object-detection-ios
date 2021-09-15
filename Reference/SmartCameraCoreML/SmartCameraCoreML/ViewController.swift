@@ -14,6 +14,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         let captureSession = AVCaptureSession()
+        captureSession.sessionPreset = .photo
 
         guard let captureDevice = AVCaptureDevice.default(for: .video),
               let input = try? AVCaptureDeviceInput(device: captureDevice) else {
